@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+
+<script>
+
+function isPalindrome(word) {
+    // Convert word to lowercase for fair comparison
+    let cleaned = word.toLowerCase();
+
+    // Reverse the word
+    let reversed = cleaned.split("").reverse().join("");
+
+    // Return true/false
+    return cleaned === reversed;
+}
+
+
+
+let wordInput = prompt("Enter the word you want to check:");
+
+// Validation
+if (!wordInput || wordInput.trim() === "") {
+    alert("Invalid input. Please enter a valid word.");
+} else {
+    let cleanedWord = wordInput.trim();
+
+    // Check palindrome
+    if (isPalindrome(cleanedWord)) {
+        let msg = `The word ${cleanedWord} is a palindrome!`;
+        alert(msg);
+        console.log(msg);
+    } else {
+        let msg = `The word you've entered is not a palindrome!`;
+        alert(msg);
+        console.log(msg);
+    }
+}
+
+</script>
+
+</body>
+</html>
