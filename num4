@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Table & Factorials</title>
+</head>
+<body>
+
+<script>
+
+function factorial(num) {
+    let result = 1;
+
+    for (let i = 1; i <= num; i++) {
+        result *= i;
+    }
+
+    return result;
+}
+
+
+function generateMultiplicationTable(n) {
+    let table = "";
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= n; j++) {
+            table += (i * j) + "  ";
+        }
+        table += "\n"; // New line after each row
+    }
+
+    return table;
+}
+
+
+let input = prompt("Enter the number you want to generate:");
+
+// Validation
+if (input === null || input.trim() === "") {
+    alert("Invalid input. Please enter a number.");
+} else if (isNaN(input) || Number(input) <= 0) {
+    alert("Please enter a valid positive number.");
+} else {
+    let n = Number(input);
+
+    // Generate multiplication table
+    let multiplicationTable = generateMultiplicationTable(n);
+
+    // Prepare factorials
+    let factorialResults = "";
+    for (let i = 1; i <= n; i++) {
+        factorialResults += `${i}! = ${factorial(i)}\n`;
+    }
+
+    // Final Output
+    let output = 
+        "Multiplication Table:\n" +
+        multiplicationTable +
+        "\nFactorials:\n" +
+        factorialResults;
+
+    alert(output);
+    console.log(output);
+}
+</script>
+
+</body>
+</html>
