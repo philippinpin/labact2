@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 1 - Name Reverse + Age</title>
+</head>
+<body>
+
+<script>
+
+function reverseName(fullName) {
+    // Trim excessive spaces and split properly
+    let cleaned = fullName.trim().replace(/\s+/g, " ");
+    
+    // Reverse characters in the entire string
+    let reversed = cleaned.split("").reverse().join("");
+    
+    return reversed;
+}
+
+
+function calculateAge(birthYear) {
+    const currentYear = new Date().getFullYear();
+    return currentYear - birthYear;
+}
+
+
+// Get user inputs
+let nameInput = prompt("Enter your full name:");
+let yearInput = prompt("Enter your birth year:");
+
+
+if (!nameInput || nameInput.trim() === "") {
+    alert("Invalid name. Please enter a non-empty name.");
+} 
+else if (isNaN(yearInput) || yearInput.trim() === "") {
+    alert("Invalid year. Please enter a valid number.");
+}
+else {
+    let birthYear = Number(yearInput);
+    const currentYear = new Date().getFullYear();
+
+    if (birthYear > currentYear || birthYear < 1900) {
+        alert("Birth year is not realistic!");
+    } else {
+        // Process values
+        let reversed = reverseName(nameInput);
+        let age = calculateAge(birthYear);
+
+        // Final Output
+        let result = 
+            `Your name is ${nameInput.trim()} and its reversed version is ${reversed}. ` +
+            `Your age is ${age} years old.`;
+
+        alert(result);
+        console.log(result);
+    }
+}
+
+</script>
+
+</body>
+</html>
