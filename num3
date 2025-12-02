@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Odd or Even Checker</title>
+</head>
+<body>
+
+<script>
+// ------------------------------------
+// MAIN PROGRAM
+// ------------------------------------
+
+let userInput = prompt("Enter the number you want to check:");
+
+// Check if input is NOT a valid number
+if (userInput === null || userInput.trim() === "" || isNaN(userInput)) {
+    let msg = "Jollibee";
+    alert(msg);
+    console.log(msg);
+} else {
+    let number = Number(userInput);
+
+    // If even → Jolly
+    if (number % 2 === 0) {
+        let msg = `${number} -> Jolly`;
+        alert(msg);
+        console.log(msg);
+    } 
+    // If odd → Bee
+    else {
+        let msg = `${number} -> Bee`;
+        alert(msg);
+        console.log(msg);
+    }
+}
+
+</script>
+
+</body>
+</html>
